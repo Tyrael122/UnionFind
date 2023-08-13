@@ -1,11 +1,10 @@
 package org.example;
 
-import java.util.Set;
-import java.util.stream.IntStream;
+import java.util.Arrays;
 
 public class UnionFindFormatter {
     private final UnionFind unionFind;
-    private final Set<Integer>[] buckets;
+    private final Bucket[] buckets;
 
     public UnionFindFormatter(UnionFind unionFind) {
         this.unionFind = unionFind;
@@ -18,14 +17,14 @@ public class UnionFindFormatter {
 
     private String getBucketsAsString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < unionFind.getCapacity(); i++) {
+        for (int i = 0; i < unionFind.getBuckets().length; i++) {
             if (isAlreadyPrinted(i)) {
                 stringBuilder.append(getAlreadyPrintedReference(i));
                 stringBuilder.append(getComma(i));
                 continue;
             }
 
-            stringBuilder.append(buckets[i].toString());
+            stringBuilder.append(getFormattedBucketIndexes(i));
             stringBuilder.append(getComma(i));
         }
         return stringBuilder.toString();
@@ -36,12 +35,17 @@ public class UnionFindFormatter {
             return false;
         }
 
-        return IntStream.range(0, index).anyMatch(i -> buckets[i].equals(buckets[index]));
+        for (int i = 0; i < index; i++) {
+            if (buckets[index].getReference().equals(buckets[i])) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private String getAlreadyPrintedReference(int index) {
         for (int i = 0; i < index; i++) {
-            if (buckets[i].equals(buckets[index])) {
+            if (buckets[index].getReference().equals(buckets[i])) {
                 return "ref(" + i + ")";
             }
         }
@@ -49,8 +53,14 @@ public class UnionFindFormatter {
         return "";
     }
 
+    private String getFormattedBucketIndexes(int i) {
+        Bucket bucket = buckets[i];
+
+        return Arrays.toString(bucket.getIndexes().toArray());
+    }
+
     private String getComma(int i) {
-        if (i != unionFind.getCapacity() - 1) {
+        if (i != unionFind.getBuckets().length - 1) {
             return ", ";
         }
 
