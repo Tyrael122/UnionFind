@@ -27,8 +27,11 @@ public class Main {
     }
 
     private static String doSelectedOption(int inputtedValue) {
-        MenuOption selectedOption = MenuOption.values()[inputtedValue];
+        if (inputtedValue >= MenuOption.values().length) {
+            return "Invalid option selected.";
+        }
 
+        MenuOption selectedOption = MenuOption.values()[inputtedValue];
         try {
             validateSelectedOption(selectedOption);
         } catch (IllegalStateException e) {
