@@ -8,8 +8,8 @@ You can initialize an array of buckets with an 'n' capacity, and it'll have 'n' 
 # `union(a, b)`
 The union function will store the actual bucket data in the lowest index of the array, and a reference to that data in the highest index.
 
-Let's look at an example of the union function: `union(0, 1)`.
-When performing the union of 0 and 1, the bucket at the zeroeth index in the array of buckets is going to store the values 0 and 1, and so be like '[0, 1]'.
+Let's look at an example of the union function: `union(0, 1)`. <br>
+When performing the union of 0 and 1, the bucket at the zeroeth index in the array of buckets is going to store the values 0 and 1, and so be like `[0, 1]`.
 A reference to that bucket will be stored in the index one, represented by `ref(0)`.
 
 So, a bucket array with a capacity of 10 would look like this after the union operation: <br>
