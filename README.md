@@ -13,14 +13,14 @@ Let's look at an example of the union function: `union(0, 1)`.
 When performing the union of 0 and 1, the bucket at the zeroeth index in the array of buckets is going to store the values 0 and 1, and so be like '[0, 1]'.
 A reference to that bucket will be stored in the index one, represented by `ref(0)`.
 
-So, a bucket array with a capacity of 10 would look like this after the union operation: 
+So, a bucket array with a capacity of 10 would look like this after the union operation: <br>
 `[[0, 1], ref(0), [], [], [], [], [], [], [], []]`.
 
 Let's make another union: `union(8, 9)`.
-The array would then look like this: 
+The array would then look like this: <br>
 `[[0, 1], ref(0), [], [], [], [], [], [], [8, 9], ref(8)]`
 
-If we then try to perform the union of 1 and 8 with `union(1, 8)` we would get an array like this: 
+If we then try to perform the union of 1 and 8 with `union(1, 8)` we would get an array like this: <br>
 `[[0, 1, 8, 9], ref(0), [], [], [], [], [], [], ref(1), ref(8)]`
 Note that the 8th index now holds a reference to the first index, because it was united with the index one.
 Notice that the zeroeth bucket now has 8 and 9 was well, because the 8th bucket was merged with the 0th bucket. 
