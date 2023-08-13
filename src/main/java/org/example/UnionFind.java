@@ -14,7 +14,7 @@ public class UnionFind {
             return;
         }
 
-        if (connected(a, b)) {
+        if (isConnected(a, b)) {
             return;
         }
 
@@ -29,7 +29,7 @@ public class UnionFind {
         buckets[highestIndex].setReference(referenceToBucket);
     }
 
-    public boolean connected(int a, int b) {
+    public boolean isConnected(int a, int b) {
         validateIndexes(a, b);
 
         if (a == b) {

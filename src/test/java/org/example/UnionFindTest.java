@@ -11,14 +11,14 @@ class UnionFindTest {
         UnionFind unionFind = new UnionFind(10);
 
         unionFind.union(1, 2);
-        assertTrue(unionFind.connected(1, 2));
+        assertTrue(unionFind.isConnected(1, 2));
     }
 
     @Test
     void connectedReflexiveProperty() {
         UnionFind unionFind = new UnionFind(10);
 
-        assertTrue(unionFind.connected(1, 1));
+        assertTrue(unionFind.isConnected(1, 1));
     }
 
     @Test
@@ -26,7 +26,7 @@ class UnionFindTest {
         UnionFind unionFind = new UnionFind(10);
 
         unionFind.union(1, 2);
-        assertTrue(unionFind.connected(2, 1));
+        assertTrue(unionFind.isConnected(2, 1));
     }
 
     @Test
@@ -35,7 +35,7 @@ class UnionFindTest {
 
         unionFind.union(1, 2);
         unionFind.union(2, 8);
-        assertTrue(unionFind.connected(1, 8));
+        assertTrue(unionFind.isConnected(1, 8));
     }
 
     @Test
@@ -46,6 +46,6 @@ class UnionFindTest {
         unionFind.union(8, 9);
 
         unionFind.union(1, 8);
-        assertTrue(unionFind.connected(1, 9));
+        assertTrue(unionFind.isConnected(1, 9));
     }
 }

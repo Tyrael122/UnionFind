@@ -52,10 +52,10 @@ public class Main {
 
                 System.out.println("Union between " + a + " and " + b + " made.");
             }
-            case CONNECTED -> {
+            case IS_CONNECTED -> {
                 int a = askForIndex("first");
                 int b = askForIndex("second");
-                boolean connected = unionFind.connected(a, b);
+                boolean connected = unionFind.isConnected(a, b);
 
                 return a + " and " + b + " are " + (connected ? "" : "not ") + "connected.";
             }
