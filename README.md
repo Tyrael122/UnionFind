@@ -25,7 +25,7 @@ If we then try to perform the union of 1 and 8 with `union(1, 8)` we would get a
 Note that the 8th index now holds a reference to the first index, because it was united with the index one.
 Notice that the zeroeth bucket now has 8 and 9 was well, because the 8th bucket was merged with the 0th bucket. 
 
-How did that happen?
+How did that happen? <br>
 When we asked the algorithm to unite 8 and 1, it went to the lowest index, one, so that it could add the highest index, 8, there.
 But what it found was a reference to the zeroeth index, so it just followed that breadcrumb and went there instead. 
 At the zeroeth index, it didn't find any references to any other bucket, just the actual data, so it add it there.
