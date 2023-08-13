@@ -2,7 +2,7 @@
 A custom implementation of the union find algorithm
 
 
-The guiding principle of this implementation is that you have buckets, and connected elements are in the same bucket. The elements are represented with integers.
+The guiding principle of this implementation is that you have an array of buckets, and connected elements are in the same bucket. The elements are represented with integers.
 You can initialize an array of buckets with an 'n' capacity, and it'll have 'n' buckets. 
 
 # `union(a, b)`
