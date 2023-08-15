@@ -3,6 +3,7 @@ package org.example;
 import org.example.interfaces.MenuOption;
 import org.example.interfaces.UnionFindMenu;
 import org.example.menus.DefaultMenu;
+import org.example.menus.bucket.BucketUnionFindDefaultMenu;
 import org.example.menus.bucket.BucketUnionFindMenuOption;
 import org.example.unionfind.algorithms.QuickFind;
 
