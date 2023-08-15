@@ -1,9 +1,11 @@
-package org.example;
+package org.example.unionfind.algorithms.bucket;
 
-public class CustomUnionFind implements UnionFind {
+import org.example.interfaces.UnionFindAlgorithm;
+
+public class BucketUnionFindAlgorithm implements UnionFindAlgorithm {
     private final Bucket[] buckets;
 
-    public CustomUnionFind(int n) {
+    public BucketUnionFindAlgorithm(int n) {
         buckets = initializeBuckets(n);
     }
 

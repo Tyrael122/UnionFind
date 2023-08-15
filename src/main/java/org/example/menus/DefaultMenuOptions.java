@@ -1,6 +1,8 @@
-package org.example;
+package org.example.menus;
 
-public enum MenuOption {
+import org.example.interfaces.MenuOption;
+
+public enum DefaultMenuOptions implements MenuOption {
     CREATE("Create a new union find object with the specified size"),
     UNION("Makes the union between two points"),
     IS_CONNECTED("Checks whether two points are connected."),
@@ -9,7 +11,7 @@ public enum MenuOption {
 
     private final String description;
 
-    MenuOption(String description) {
+    DefaultMenuOptions(String description) {
         this.description = description;
     }
 

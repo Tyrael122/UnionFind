@@ -1,14 +1,14 @@
-package org.example;
+package org.example.unionfind.algorithms.bucket;
 
 import java.util.Arrays;
 
 public class UnionFindFormatter {
-    private final CustomUnionFind customUnionFind;
+    private final BucketUnionFindAlgorithm bucketUnionFind;
     private final Bucket[] buckets;
 
-    public UnionFindFormatter(CustomUnionFind customUnionFind) {
-        this.customUnionFind = customUnionFind;
-        this.buckets = customUnionFind.getBuckets();
+    public UnionFindFormatter(BucketUnionFindAlgorithm bucketUnionFind) {
+        this.bucketUnionFind = bucketUnionFind;
+        this.buckets = bucketUnionFind.getBuckets();
     }
 
     public String getFormattedBuckets() {
@@ -17,7 +17,7 @@ public class UnionFindFormatter {
 
     private String getBucketsAsString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < customUnionFind.getBuckets().length; i++) {
+        for (int i = 0; i < bucketUnionFind.getBuckets().length; i++) {
             if (isAlreadyPrinted(i)) {
                 stringBuilder.append(getAlreadyPrintedReference(i));
                 stringBuilder.append(getComma(i));
@@ -60,7 +60,7 @@ public class UnionFindFormatter {
     }
 
     private String getComma(int i) {
-        if (i != customUnionFind.getBuckets().length - 1) {
+        if (i != bucketUnionFind.getBuckets().length - 1) {
             return ", ";
         }
 

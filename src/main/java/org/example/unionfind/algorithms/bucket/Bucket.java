@@ -1,4 +1,4 @@
-package org.example;
+package org.example.unionfind.algorithms.bucket;
 
 import java.util.ArrayList;
 import java.util.HashSet;

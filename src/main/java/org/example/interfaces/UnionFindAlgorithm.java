@@ -1,6 +1,6 @@
-package org.example;
+package org.example.interfaces;
 
-public interface UnionFind {
+public interface UnionFindAlgorithm {
     void union(int a, int b);
 
     boolean isConnected(int a, int b);
