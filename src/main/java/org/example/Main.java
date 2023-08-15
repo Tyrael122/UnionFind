@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
-    private static UnionFind unionFind = new UnionFind(10);
+    private static CustomUnionFind customUnionFind = new CustomUnionFind(10);
     private static UnionFindFormatter unionFindFormatter;
 
     private static final Scanner in = new Scanner(System.in);
@@ -42,20 +42,20 @@ public class Main {
         switch (selectedOption) {
             case CREATE -> {
                 int size = askForInteger("Please enter the size of the union find object: ");
-                unionFind = new UnionFind(size);
+                customUnionFind = new CustomUnionFind(size);
                 System.out.println("Union find object created with size " + size);
             }
             case UNION -> {
                 int a = askForIndex("first");
                 int b = askForIndex("second");
-                unionFind.union(a, b);
+                customUnionFind.union(a, b);
 
                 System.out.println("Union between " + a + " and " + b + " made.");
             }
             case IS_CONNECTED -> {
                 int a = askForIndex("first");
                 int b = askForIndex("second");
-                boolean connected = unionFind.isConnected(a, b);
+                boolean connected = customUnionFind.isConnected(a, b);
 
                 return a + " and " + b + " are " + (connected ? "" : "not ") + "connected.";
             }
@@ -73,7 +73,7 @@ public class Main {
             return;
         }
 
-        if (selectedOption != MenuOption.CREATE && unionFind == null) {
+        if (selectedOption != MenuOption.CREATE && customUnionFind == null) {
             throw new IllegalStateException("You must create a union find object first.");
         }
     }
@@ -88,7 +88,7 @@ public class Main {
     }
 
     private static void initializeVariables() {
-        unionFindFormatter = new UnionFindFormatter(unionFind);
+        unionFindFormatter = new UnionFindFormatter(customUnionFind);
     }
 
     private static void showMenu() {
