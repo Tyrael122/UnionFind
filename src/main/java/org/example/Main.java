@@ -6,11 +6,12 @@ import org.example.menus.DefaultMenu;
 import org.example.menus.bucket.BucketUnionFindDefaultMenu;
 import org.example.menus.bucket.BucketUnionFindMenuOption;
 import org.example.unionfind.algorithms.QuickFind;
+import org.example.unionfind.algorithms.WeightedQuickFind;
 
 import java.util.Scanner;
 
 public class Main {
-    private static final UnionFindMenu menu = new DefaultMenu(new QuickFind(10));
+    private static final UnionFindMenu menu = new DefaultMenu(new WeightedQuickFind(10));
     private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
